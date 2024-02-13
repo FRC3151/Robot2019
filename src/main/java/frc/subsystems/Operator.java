@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import frc.robot.DeadzoneUtils;
 import frc.robot.RobotMap;
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class Operator {
@@ -47,7 +48,7 @@ public class Operator {
     }
   
     public void rVibrate() {
-        Random r = new Random();
+        Random r = new SecureRandom();
         double left = 0.75D / (r.nextInt(15) + 1) + 0.25D;
         double right = 0.75D / (r.nextInt(15) + 1) + 0.25D;
         RobotMap.operator.setRumble(RumbleType.kLeftRumble, left);
